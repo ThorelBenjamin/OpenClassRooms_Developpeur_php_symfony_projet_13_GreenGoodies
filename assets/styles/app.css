@@ -1,0 +1,508 @@
+html, body {
+    margin: 0;
+    background: #FBFBFB;
+    font-family: "Inter", sans-serif;
+}
+
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 81px;
+}
+
+footer{
+    width: 100%;
+    border: 1px solid #F6F5F0;
+    height: 81px;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+footer p {
+    font-size: 14px;
+    font-weight: 400;
+    padding-right: 89px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    padding-right: 53px;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+}
+
+.welcome{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #E8F0E3;
+    height: 751px;
+}
+
+.welcome-msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 709px;
+}
+
+.welcome-msg h1 {
+    font-size: 64px;
+    font-weight: 500;
+    padding-left: 173px;
+}
+
+.welcome-msg p {
+    font-size: 18px;
+    font-weight: 300;
+    width: 362px;
+    padding-left: 173px;
+}
+
+.welcome + h2 {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 37px 7% 37px;
+}
+
+.product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.product-content{
+    width: 1440px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product-cards{
+    display: flex;
+    flex-direction: column;
+    height: 692px;
+    width: 480px;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-cards img{
+    height: 474px;
+    width: 480px;
+}
+
+.product-cards h3{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+.product-cards h4{
+    margin: 0;
+    font-weight: 400;
+    color: #666666;
+    font-size: 14px;
+    padding-top: 8px;
+}
+
+.product-cards p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 20px;
+}
+
+.product-cards a {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.conviction {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EBE3D3;
+    height: 646px;
+}
+
+.conviction-text{
+    padding-left: 40px;
+    padding-bottom: 40px;
+    width: 425px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.conviction-text h2{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.conviction-text p{
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.conviction img{
+    width: 487px;
+    height: 646px;
+}
+
+.value {
+    display: flex;
+    justify-content: space-between;
+    background-color: #E8F0E3;
+    height: 646px;
+}
+
+.value-text{
+    padding-right: 40px;
+    padding-bottom: 40px;
+    width: 425px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.value-text h2{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.value-text p{
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.value-picture img{
+    width: 487px;
+    height: 646px;
+}
+
+/** Login **/
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #E8F0E3;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h2 {
+    font-size: 20px;
+    padding-left: 100px;
+    font-weight: 500;
+    margin-top: 80px;
+}
+
+.login-form p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #666666;
+    padding-left: 223px;
+    text-decoration: underline;
+}
+
+.login-form a {
+    color: #666666;
+}
+
+.login-btn{
+    background-color: #565656;
+    height: 77px;
+    width: 479px;
+    color: #FFFFFF;
+}
+
+.login-fields{
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+}
+
+input {
+    border : 1px solid #666666;
+    width: 479px;
+    height: 67px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+/** Register **/
+
+.registration-page {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #E8F0E3;
+}
+
+.registration-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form h2 {
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 100px;
+    padding-top: 37px;
+    margin-bottom: 0;
+}
+
+.registration-form p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #666666;
+    padding-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 24px;
+}
+
+.registration-form a {
+    font-weight: 400;
+    font-size: 14px;
+    color: #666666;
+    padding-left: 223px;
+    text-decoration: underline;
+    padding-top: 30px;
+}
+
+.registration-form a {
+    color: #666666;
+}
+
+.agree-terms{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.agree-terms label {
+    padding-left: 7px;
+    padding-top: 10px;
+}
+
+.agree-terms input {
+    height: 19px;
+    width: 19px;
+    padding-right: 7px;
+}
+
+.registration-fields{
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Detail product */
+
+.detail {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.detail-img{
+    width: 734px;
+    height: 686px;
+    background-color: yellow;
+}
+
+.detail-text{
+    padding-left: 119px;
+    display: flex;
+    flex-direction: column;
+    width: 465px;
+}
+
+.detail-text h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 82px;
+}
+
+.detail-price{
+    font-weight: 300;
+    font-size: 30px;
+    color: black;
+    margin: 0;
+    padding-top: 24px;
+}
+
+.detail h3 {
+    color: #666666;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+    padding-top: 50px;
+}
+
+.detail-description {
+    font-weight: 400;
+    font-size: 14px;
+    color: #666666;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.detail button{
+    width: 465px;
+    height: 77px;
+    padding: 30px 173px 30px 173px;
+    margin-top: 145px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #565656;
+    color: #FFFFFF;
+}
+
+/* Dashboard */
+
+.dashboard {
+    display: flex;
+    width: 100%;
+    background-color: #F7F1EC;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 43px;
+}
+
+.order-item {
+    background-color: #FFFFFF;
+    width: 604px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 43px;
+}
+
+.order-item h3 {
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+}
+
+.order-item table{
+    display: flex;
+    flex-direction: column;
+    width: 485px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+}
+
+.order-item th{
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+}
+
+table th:nth-child(1) {
+    padding-right: 167px;
+}
+
+table th:nth-child(2){
+    padding-right: 214px;
+}
+
+.acces_api{
+    background-color: #FFFFFF;
+    width: 604px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.acces_api h3{
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 60px;
+    padding-bottom: 30px;
+    padding-top: 60px;
+}
+
+.acces_api button{
+    width: 479px;
+    height: 77px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #565656;
+    color: #FFFFFF;
+    margin-left: 60px;
+    margin-bottom: 60px;
+}
+
+.delete_account{
+    background-color: #FFFFFF;
+    width: 604px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 77px;
+}
+
+.delete_account h3{
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 60px;
+    padding-bottom: 30px;
+    padding-top: 60px;
+}
+
+.delete_account button{
+    width: 479px;
+    height: 77px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #565656;
+    color: #FFFFFF;
+    margin-left: 60px;
+    margin-bottom: 60px;
+}
+

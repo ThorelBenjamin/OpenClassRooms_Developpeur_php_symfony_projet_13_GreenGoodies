@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+<div class="dashboard">
+    <h2>Mon compte</h2>
+    <div class="order-item">
+        <h3>Mes commandes</h3>
+        <table>
+            <tr>
+                <th>N°</th>
+                <th>Date</th>
+                <th>Prix</th>
+            </tr>
+            {% for order in orders %}
+                <tr>
+                    <td>
+                        <p>{{ order.id }}</p>
+                    </td>
+                    <td>
+                        <p>{{ order.date|date('d/m/Y') }}</p>
+                    </td>
+                    <td>
+                        <p>{{ order.orderPrice|number_format(2, ',', ' ') }}€</p>
+                    </td>
+                </tr>
+            {% else %}
+                <p>Aucun produit.</p>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="acces_api">
+        <h3>Mon accès API</h3>
+        <button>Activer mon accès API</button>
+    </div>
+    <div class="delete_account">
+        <button>Supprimer mon compte</button>
+    </div>
+</div>
+{% endblock %}

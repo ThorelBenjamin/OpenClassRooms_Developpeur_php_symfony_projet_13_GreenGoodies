@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Grenn Goodies{% endblock %}
+
+{% block body %}
+<div>
+    <div class="welcome">
+        <div class="welcome-msg">
+            <h1>Bienvenu</h1>
+            <p>Découvrez notre univers de produits durables et éthiques pour une consommation responsable</p>
+            <p>Retrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt à porter</p>
+        </div>
+        <div class="welcome-img">
+            <a href="/"><img src="{{ asset('img/MaskGroup.png') }}" alt="Welcome picture" /></a>
+        </div>
+    </div>
+    <h2>NOS PRODUITS</h2>
+    <div class="product">
+        <div class="product-content">
+            {% for product in products %}
+                <div class="product-cards">
+                    <div class="picture-cards"><img src="{{ asset('img/' ~ product.picture) }}" alt="{{ product.name }}"></div>
+                    <h3>{{ product.name }}</h3>
+                    <h4>{{ product.shortdescription }}</h4>
+                    <p>{{ product.price }}€</p>
+                    <a href="{{ path('product.show', {id: product.id}) }}">voir le produit</a>
+                </div>
+            {% else %}
+                <p>Aucun produit.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="conviction">
+        <div class="conviction-text">
+            <h2>NOTRE CONVICTION</h2>
+            <p>Chez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien-être pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse de produits qui allient qualité, durabilité et éthique</p>
+        </div>
+        <div class="conviction-picture">
+            <img src="{{ asset('img/MaskGroupConnexion.png') }}" alt="conviction"/>
+        </div>
+    </div>
+    <div class="value">
+        <div class="value-picture">
+            <img src="{{ asset('img/poubelle.png') }}" alt="value"/>
+        </div>
+        <div class="value-text">
+            <h2>NOS VALEURS</h2>
+            <p>Durabilité : Nous sélectionnons soigneusement des produits qui respectent l'environnement et favorisent la durabilité.
+                Éthique : Nous nous engageons à travailler avec des partenaires et des fournisseurs qui partagent nos valeurs éthiques.
+                Écologie : Nous encourageons des pratiques respectueuses de l'écosystème et privilégions les matériaux écologiques.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

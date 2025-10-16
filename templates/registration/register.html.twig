@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+    <div class="registration-page">
+        <div class="registration-img">
+            <img src="{{ asset('img/MaskGroupInscription.png') }}" alt="GreenGoodies logo" />
+        </div>
+        <div class="registration-form">
+            <h2>Inscription</h2>
+            <p>Tous les champs sont obligatoires.</p>
+
+            <div class="registration-fields">
+                {{ form_errors(registrationForm) }}
+
+                {{ form_start(registrationForm) }}
+                <label for="firstname">Prénom</label>
+                {{ form_row(registrationForm.firstname, { label: false }) }}
+                <label for="lastname">Nom</label>
+                {{ form_row(registrationForm.lastname, { label: false }) }}
+                <label for="username">Email</label>
+                {{ form_row(registrationForm.email, { label: false }) }}
+                <label for="plainPassword_first">Mot de passe</label>
+                {{ form_row(registrationForm.plainPassword.first, { label: false }) }}
+                <label for="plainPassword_second">Confirmez le mot de passe</label>
+                {{ form_row(registrationForm.plainPassword.second, { label: false }) }}
+
+                <div class="agree-terms">
+                    <label for="agreeTerms">J’accepte les CGU de GreenGoodies</label>
+                    {{ form_row(registrationForm.agreeTerms, { label: false }) }}
+                </div>
+
+
+                <button type="submit" class="login-btn">S'inscrire</button>
+                {{ form_end(registrationForm) }}
+            </div>
+
+            <a href="{{ path('app_login') }}">Déjà un compte ? Se connecter</a>
+        </div>
+    </div>
+{% endblock %}
