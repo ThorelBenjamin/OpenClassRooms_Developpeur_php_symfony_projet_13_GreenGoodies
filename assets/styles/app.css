@@ -42,6 +42,13 @@ nav a {
     color: black;
 }
 
+nav a:hover {
+    padding-right: 53px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+}
+
 .welcome{
     display: flex;
     width: 100%;
@@ -245,6 +252,13 @@ nav a {
     color: #FFFFFF;
 }
 
+.login-btn:hover{
+    background-color: #000000;
+    height: 77px;
+    width: 479px;
+    color: #FFFFFF;
+}
+
 .login-fields{
     padding-left: 100px;
     display: flex;
@@ -414,6 +428,17 @@ input {
     color: #FFFFFF;
 }
 
+.detail .update-button:hover{
+    width: 465px;
+    height: 77px;
+    padding: 30px 173px 30px 173px;
+    margin-top: 45px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
 .detail .add-button{
     width: 465px;
     height: 77px;
@@ -422,6 +447,17 @@ input {
     font-size: 14px;
     font-weight: 400;
     background-color: #565656;
+    color: #FFFFFF;
+}
+
+.detail .add-button:hover{
+    width: 465px;
+    height: 77px;
+    padding: 30px 173px 30px 173px;
+    margin-top: 145px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #000000;
     color: #FFFFFF;
 }
 
@@ -507,6 +543,17 @@ table th:nth-child(2){
     margin-bottom: 60px;
 }
 
+.acces_api button:hover{
+    width: 479px;
+    height: 77px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #000000;
+    color: #FFFFFF;
+    margin-left: 60px;
+    margin-bottom: 60px;
+}
+
 .delete_account{
     background-color: #FFFFFF;
     width: 604px;
@@ -536,6 +583,17 @@ table th:nth-child(2){
     margin-bottom: 60px;
 }
 
+.delete_account button:hover{
+    width: 479px;
+    height: 77px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #000000;
+    color: #FFFFFF;
+    margin-left: 60px;
+    margin-bottom: 60px;
+}
+
 /* Basket */
 
 .basket{
@@ -560,6 +618,13 @@ table th:nth-child(2){
     font-size: 14px;
     font-weight: 400;
     color: #666666;
+}
+
+.basket-clear:hover{
+    font-size: 14px;
+    font-weight: 500;
+    color: #666666;
+    text-decoration: underline;
 }
 
 .basket-card-link {
@@ -639,6 +704,16 @@ table th:nth-child(2){
     font-size: 14px;
     font-weight: 400;
     background-color: #565656;
+    color: #FFFFFF;
+    margin: 29px 0px 146px 60px;
+}
+
+.basket_valid button:hover{
+    width: 479px;
+    height: 77px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #000000;
     color: #FFFFFF;
     margin: 29px 0px 146px 60px;
 }
