@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
@@ -14,21 +15,27 @@ class Product
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['getProducts'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['getProducts'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['getProducts'])]
     private ?string $shortDescription = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['getProducts'])]
     private ?string $fullDescription = null;
 
     #[ORM\Column]
+    #[Groups(['getProducts'])]
     private ?float $price = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['getProducts'])]
     private ?string $picture = null;
 
     /**

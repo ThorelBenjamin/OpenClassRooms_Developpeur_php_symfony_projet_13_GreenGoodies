@@ -33,13 +33,21 @@ class RegistrationFormType extends AbstractType
                     new Length(['max' => 255]),
                 ],
             ])
-            ->add('email')
+            ->add('email', \Symfony\Component\Form\Extension\Core\Type\EmailType::class, [
+                'label' => false,
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez saisir votre email.']),
+                    new \Symfony\Component\Validator\Constraints\Email([
+                        'message' => 'L\'adresse email "{{ value }}" n\'est pas valide.',
+                    ]),
+                ],
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'label' => 'J\'accepte les CGU de GreenGoodies',
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter les conditions d\.',
                     ]),
                 ],
             ])

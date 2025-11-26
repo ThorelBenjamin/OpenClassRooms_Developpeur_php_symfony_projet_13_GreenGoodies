@@ -32,7 +32,18 @@
     </div>
     <div class="acces_api">
         <h3>Mon accès API</h3>
-        <button>Activer mon accès API</button>
+
+        {% if app.user.isApiActivate() %}
+            <form method="post" action="{{ path('app_toggle_api') }}">
+                <input type="hidden" name="_token" value="{{ csrf_token('toggle_api') }}">
+                <button type="submit">Désactiver mon accès API</button>
+            </form>
+        {% else %}
+            <form method="post" action="{{ path('app_toggle_api') }}">
+                <input type="hidden" name="_token" value="{{ csrf_token('toggle_api') }}">
+                <button type="submit">Activer mon accès API</button>
+            </form>
+        {% endif %}
     </div>
     <div class="delete_account">
         <button>Supprimer mon compte</button>

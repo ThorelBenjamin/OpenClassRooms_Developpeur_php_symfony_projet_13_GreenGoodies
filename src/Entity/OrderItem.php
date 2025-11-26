@@ -64,4 +64,16 @@ class OrderItem
 
         return $this;
     }
+
+    public function isBasket(): ?bool
+    {
+        return $this->basket;
+    }
+
+    public function setBasket(bool $basket): static
+    {
+        $this->basket = $basket;
+
+        return $this;
+    }
 }

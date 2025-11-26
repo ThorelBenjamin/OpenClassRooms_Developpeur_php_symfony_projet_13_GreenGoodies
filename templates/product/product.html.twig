@@ -5,14 +5,32 @@
 {% block body %}
     <div class="detail">
         <div class="detail-img">
-            <img src="{{ asset('img/' ~ product.picture) }}" alt="{{ product.name }}">
+            <img src="{{ asset('img/article/' ~ product.picture) }}" alt="{{ product.name }}">
         </div>
         <div class="detail-text">
             <h2>{{ product.name }}</h2>
             <p><span class="detail-price">{{ product.price }}€</span></p>
             <h3>Description</h3>
             <p><span class="detail-description">{{ product.fulldescription }}</span></p>
-            <button>Ajouter au panier</button>
+            {% if app.user %}
+                {% if productBasket %}
+                    <form method="post" class="add-to-cart-form">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('basket') }}">
+                        <label for="quantity">Quantité</label>
+                        <input id="quantity" name="quantity" type="number" min="0" value="1">
+                        <button type="submit" class="update-button">Modifier au panier</button>
+                    </form>
+                {% else %}
+                    <form method="post" class="add-to-cart-form">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('basket') }}">
+                        <label for="quantity">Quantité</label>
+                        <input id="quantity" name="quantity" type="number" min="0" value="1">
+                        <button type="submit" class="add-button">Ajouter au panier</button>
+                    </form>
+                {% endif %}
+            {% else %}
+                <a href="{{ path('app_login') }}" class="product-connexion">Connexion</a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

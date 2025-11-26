@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\OrderItem;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -16,28 +17,22 @@ class OrderItemRepository extends ServiceEntityRepository
         parent::__construct($registry, OrderItem::class);
     }
 
-    //    /**
-    //     * @return OrderItem[] Returns an array of OrderItem objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('o')
-    //            ->andWhere('o.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('o.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
 
-    //    public function findOneBySomeField($value): ?OrderItem
-    //    {
-    //        return $this->createQueryBuilder('o')
-    //            ->andWhere('o.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    /**
+     * @return OrderItem[]
+     */
+    public function findBasketItemsForUser(User $user): array
+    {
+        return $this->createQueryBuilder('oi')
+            ->innerJoin('oi.order', 'o')
+            ->innerJoin('oi.product', 'p')
+            ->addSelect('o', 'p') // évite le N+1
+            ->where('oi.basket = :basket')
+            ->andWhere('o.user = :user')
+            ->setParameter('basket', true)
+            ->setParameter('user', $user)
+            ->orderBy('oi.id', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
 }

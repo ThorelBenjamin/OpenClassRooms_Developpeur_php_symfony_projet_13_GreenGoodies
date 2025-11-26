@@ -19,7 +19,7 @@
         <div class="product-content">
             {% for product in products %}
                 <div class="product-cards">
-                    <div class="picture-cards"><img src="{{ asset('img/' ~ product.picture) }}" alt="{{ product.name }}"></div>
+                    <div class="picture-cards"><img src="{{ asset('img/article/' ~ product.picture) }}" alt="{{ product.name }}"></div>
                     <h3>{{ product.name }}</h3>
                     <h4>{{ product.shortdescription }}</h4>
                     <p>{{ product.price }}€</p>

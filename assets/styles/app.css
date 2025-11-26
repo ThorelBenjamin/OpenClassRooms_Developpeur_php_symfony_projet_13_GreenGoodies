@@ -347,6 +347,11 @@ input {
     background-color: yellow;
 }
 
+.detail-img img{
+    width: 734px;
+    height: 686px;
+}
+
 .detail-text{
     padding-left: 119px;
     display: flex;
@@ -385,7 +390,31 @@ input {
     padding-top: 10px;
 }
 
-.detail button{
+.detail a {
+    margin: 0;
+    padding: 30px 173px 30px 173px;
+    margin-top: 145px;
+}
+
+.detail .product-connexion {
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #565656;
+    color: #FFFFFF;
+}
+
+.detail .update-button{
+    width: 465px;
+    height: 77px;
+    padding: 30px 173px 30px 173px;
+    margin-top: 45px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #565656;
+    color: #FFFFFF;
+}
+
+.detail .add-button{
     width: 465px;
     height: 77px;
     padding: 30px 173px 30px 173px;
@@ -485,6 +514,7 @@ table th:nth-child(2){
     flex-direction: column;
     margin-top: 15px;
     margin-bottom: 77px;
+    padding-top: 50px;
 }
 
 .delete_account h3{
@@ -506,3 +536,109 @@ table th:nth-child(2){
     margin-bottom: 60px;
 }
 
+/* Basket */
+
+.basket{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7F1EC;
+}
+
+.basket-container{
+    width: 605px;
+}
+
+.basket h2{
+    font-weight: 500;
+    font-size: 20px;
+    margin: 102px 0 16px 0;
+    padding-left: 248px;
+}
+
+.basket-clear{
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+}
+
+.basket-card-link {
+    color: black;
+}
+
+.basket-card {
+    width: 604px;
+    background-color: #FFFDF7;
+    display: flex;
+    align-items: center;
+    height: 220px;
+}
+
+.basket-cards {
+    margin-top: 17px;
+}
+
+.basket-cards img{
+    width: 142px;
+    height: 133px;
+    padding-left: 43px;
+    padding-right: 55px;
+}
+
+.basket-text h3 {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+}
+
+.basket-card p:nth-child(2){
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+    margin: 0;
+    padding-top: 6px;
+}
+
+.basket-card p:nth-child(3){
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 13px;
+}
+
+.basket-price{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #FFFDF7;
+    width: 604px;
+    height: 81px;
+    margin-top: 5px;
+}
+
+.basket-price h4{
+    margin: 24px 38px 3px 0px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.basket-total{
+    font-size: 20px;
+}
+
+.basket-price p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #666666;
+    margin: 0px 60px 0px 0px;
+}
+
+.basket_valid button{
+    width: 479px;
+    height: 77px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #565656;
+    color: #FFFFFF;
+    margin: 29px 0px 146px 60px;
+}

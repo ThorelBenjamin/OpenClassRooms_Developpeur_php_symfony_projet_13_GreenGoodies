@@ -10,29 +10,37 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: CustomerOrderRepository::class)]
 class CustomerOrder
 {
+    public const STATUS_BASKET = 'basket';
+    public const STATUS_PAID = 'paid';
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?\DateTime $date = null;
+    private \DateTime $date;
 
     #[ORM\Column]
-    private ?float $orderPrice = null;
+    private float $orderPrice;
 
     /**
      * @var Collection<int, OrderItem>
      */
-    #[ORM\OneToMany(targetEntity: OrderItem::class, mappedBy: 'order', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: OrderItem::class, mappedBy: 'order', orphanRemoval: true, cascade: ['persist', 'remove'])]
     private Collection $orderItems;
 
     #[ORM\ManyToOne]
     private ?User $user = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $status = null;
+
     public function __construct()
     {
         $this->orderItems = new ArrayCollection();
+        $this->status = self::STATUS_BASKET;
+        $this->date = new \DateTime();
+        $this->orderPrice = 0;
     }
 
     public function getId(): ?int
@@ -40,7 +48,7 @@ class CustomerOrder
         return $this->id;
     }
 
-    public function getDate(): ?\DateTime
+    public function getDate(): \DateTime
     {
         return $this->date;
     }
@@ -52,7 +60,7 @@ class CustomerOrder
         return $this;
     }
 
-    public function getOrderPrice(): ?float
+    public function getOrderPrice(): float
     {
         return $this->orderPrice;
     }
@@ -102,6 +110,18 @@ class CustomerOrder
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): static
+    {
+        $this->status = $status;
 
         return $this;
     }

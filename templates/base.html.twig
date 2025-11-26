@@ -21,13 +21,14 @@
             <a href="{{ path('app_home') }}"><img src="{{ asset('img/Logo.png') }}" alt="GreenGoodies logo" /></a>
         </div>
         <nav>
-            <a href="/">Nos produits</a>
-            <a href="/">Mon panier</a>
-            <a href="{{ path('app_dashboard') }}">Mon compte</a>
             {% if app.user %}
+                <a href="/">Nos produits</a>
+                <a href="{{ path('app_basket') }}">Mon panier</a>
+                <a href="{{ path('app_dashboard') }}">Mon compte</a>
                 <a href="{{ path('app_logout') }}" class="deconnexion">Déconnexion</a>
             {% else %}
                 <a href="{{ path('app_login') }}" class="connexion">Connexion</a>
+                <a href="{{ path('app_register') }}" class="inscription">Inscription</a>
             {% endif %}
         </nav>
     </header>
