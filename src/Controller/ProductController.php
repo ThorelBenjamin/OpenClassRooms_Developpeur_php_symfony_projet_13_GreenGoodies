@@ -33,7 +33,9 @@ final class ProductController extends AbstractController
 
         if ($user) {
             $customerOrder = $orderManager->getUserBasket($user);
-            $productInBasket = $orderManager->productIsInBasket($customerOrder, $product);
+            $orderItem = $orderManager->getOrderItem($customerOrder, $product);
+            $productInBasket = $orderItem !== null;
+            $quantityInBasket = $orderItem ? $orderItem->getQuantity() : 1;
         }
 
         if ($request->isMethod('POST')) {
@@ -55,7 +57,7 @@ final class ProductController extends AbstractController
         }
 
         return $this->render('product/product.html.twig', [
-            'controller_name' => 'HomeController', 'product' => $product, 'productBasket' => $productInBasket
+            'controller_name' => 'HomeController', 'product' => $product, 'productBasket' => $productInBasket, 'quantityInBasket' => $quantityInBasket
         ]);
     }
 

@@ -17,7 +17,7 @@
                     <form method="post" class="add-to-cart-form">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('basket') }}">
                         <label for="quantity">Quantité</label>
-                        <input id="quantity" name="quantity" type="number" min="0" value="1">
+                        <input id="quantity" name="quantity" type="number" min="0"  value="{{ quantityInBasket }}">
                         <button type="submit" class="update-button">Modifier au panier</button>
                     </form>
                 {% else %}

@@ -68,15 +68,15 @@ class OrderManager
         $customerOrder->setOrderPrice($total);
     }
 
-    public function productIsInBasket(CustomerOrder $customerOrder, Product $product): bool
+    public function getOrderItem(CustomerOrder $customerOrder, Product $product): ?OrderItem
     {
         foreach ($customerOrder->getOrderItems() as $orderItem) {
             if ($orderItem->getProduct() === $product) {
-                return true;
+                return $orderItem;
             }
         }
 
-        return false;
+        return null;
     }
 
     public function setProductQuantity(CustomerOrder $customerOrder, Product $product, int $quantity): CustomerOrder
