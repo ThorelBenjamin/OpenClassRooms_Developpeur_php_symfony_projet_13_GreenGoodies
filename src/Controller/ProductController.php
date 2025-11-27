@@ -30,6 +30,7 @@ final class ProductController extends AbstractController
     {
         $user = $this->getUser();
         $productInBasket = false;
+        $quantityInBasket = 1;
 
         if ($user) {
             $customerOrder = $orderManager->getUserBasket($user);
