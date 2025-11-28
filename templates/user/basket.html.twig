@@ -20,7 +20,7 @@
                             <div class="basket-text">
                                 <h3>{{ item.product.name }}</h3>
                                 <p>Quantité : {{ item.quantity }}</p>
-                                <p>{{ (item.quantity * item.product.price)|number_format(2, ',', ' ') }} €</p>
+                                <p>{{ (item.product.price)|number_format(2, ',', ' ') }} €</p>
                             </div>
                         </div>
                     </a>

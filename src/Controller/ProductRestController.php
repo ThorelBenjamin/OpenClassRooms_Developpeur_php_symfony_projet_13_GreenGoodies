@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 final class ProductRestController extends AbstractController
 {
     #[Route('/api/products', name: 'products', methods: ['GET'])]
-    public function getAllConseils(ProductRepository $productRepository, SerializerInterface $serializer): JsonResponse
+    public function getAllProduct(ProductRepository $productRepository, SerializerInterface $serializer): JsonResponse
     {
         $user = $this->getUser();
 
@@ -24,9 +24,9 @@ final class ProductRestController extends AbstractController
             return new JsonResponse(['message' => 'Accès API non activé'], Response::HTTP_FORBIDDEN);
         }
 
-        $conseilList = $productRepository->findAll();
+        $productList = $productRepository->findAll();
 
-        $jsonConseilList = $serializer->serialize($conseilList, 'json', ['groups' => 'getProducts']);
-        return new JsonResponse($jsonConseilList, Response::HTTP_OK, [], true);
+        $jsonProductList = $serializer->serialize($productList, 'json', ['groups' => 'getProducts']);
+        return new JsonResponse($jsonProductList, Response::HTTP_OK, [], true);
     }
 }
