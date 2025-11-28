@@ -100,5 +100,35 @@ final class UserController extends AbstractController
 
         return $this->redirectToRoute('app_dashboard');
     }
+
+    #[IsGranted('IS_AUTHENTICATED_FULLY')]
+    #[Route('/dashboard/delete-account', name: 'app_delete_account', methods: ['POST'])]
+    public function deleteAccount(Request $request, CustomerOrderRepository $orderRepo, OrderItemRepository $itemRepo, EntityManagerInterface $em): RedirectResponse {
+        $user = $this->getUser();
+
+        $submittedToken = $request->request->get('_token');
+        if (!$this->isCsrfTokenValid('delete_account', $submittedToken)) {
+            $this->addFlash('error', 'Token CSRF invalide.');
+            return $this->redirectToRoute('app_dashboard');
+        }
+
+        $orders = $orderRepo->findBy(['user' => $user]);
+
+        foreach ($orders as $order) {
+            foreach ($order->getOrderItems() as $item) {
+                $em->remove($item);
+            }
+            $em->remove($order);
+        }
+        $this->container->get('security.token_storage')->setToken(null);
+        $request->getSession()->invalidate();
+
+        $em->remove($user);
+        $em->flush();
+
+        $this->addFlash('success', 'Votre compte a bien été supprimé.');
+
+        return $this->redirectToRoute('app_home');
+    }
 }
 

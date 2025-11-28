@@ -46,7 +46,12 @@
         {% endif %}
     </div>
     <div class="delete_account">
-        <button>Supprimer mon compte</button>
+        <form method="post" action="{{ path('app_delete_account') }}">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete_account') }}">
+            <button type="submit" onclick="return confirm('Voulez-vous vraiment supprimer votre compte ? Toutes vos commandes seront supprimées.')">
+                Supprimer mon compte
+            </button>
+        </form>
     </div>
 </div>
 {% endblock %}
