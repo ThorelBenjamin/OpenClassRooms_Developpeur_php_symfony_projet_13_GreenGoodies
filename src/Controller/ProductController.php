@@ -26,8 +26,14 @@ final class ProductController extends AbstractController
 
 
     #[Route('/product/{id}', name: 'product.show', requirements: ['id' => '\d+'])]
-    public function show(Product $product, Request $request, OrderManager $orderManager, EntityManagerInterface $entityManager): Response
+    public function show(int $id, Request $request, OrderManager $orderManager, EntityManagerInterface $entityManager): Response
     {
+        $product = $entityManager->getRepository(Product::class)->find($id);
+
+        if (!$product) {
+            return $this->redirectToRoute('app_home');
+        }
+
         $user = $this->getUser();
         $productInBasket = false;
         $quantityInBasket = 1;
@@ -54,7 +60,6 @@ final class ProductController extends AbstractController
                 $entityManager->flush();
                 return $this->redirectToRoute('app_basket');
             }
-
         }
 
         return $this->render('product/product.html.twig', [
